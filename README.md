@@ -1,42 +1,16 @@
-# Nuxt 3 Minimal Starter
+# Histoire Nuxt 3 Module loading bug reprodution
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+## install
 
-## Setup
+`yarn`
 
-Make sure to install the dependencies:
+## How it should work
 
-```bash
-# yarn
-yarn install
+`yarn dev`
 
-# npm
-npm install
+```The module gets loaded....```
+Module is loaded correctly.
+If you open the page in a browser, you can see in the console, that the plugin is also installed.
 
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+## What happens with Histoire
+Running `yarn story:dev` results in loading the Module, but not the plugin, so the second message is never printed to the console.
